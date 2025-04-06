@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin, ExternalLink, Briefcase, Code, Book } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
