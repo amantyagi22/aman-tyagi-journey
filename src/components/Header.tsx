@@ -10,7 +10,11 @@ const Header = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
           <div className="md:col-span-2">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">Aman Tyagi</h1>
-            <p className="text-lg md:text-xl mb-4">Backend Developer & DevOps Engineer</p>
+            <p className="text-lg md:text-xl mb-4">Backend-Focused Software Engineer</p>
+            <p className="text-sm md:text-base mb-4 max-w-2xl">
+              I'm a backend-focused Software Engineer with a knack for building real-time, scalable systems that don't just work—they fly. 
+              Specializing in Node.js, TypeScript, MongoDB, and distributed systems.
+            </p>
             <div className="flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-1">
                 <Mail size={16} />

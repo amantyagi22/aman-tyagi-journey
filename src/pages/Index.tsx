@@ -12,6 +12,20 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow">
+        <section className="py-12 bg-secondary/30">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-lg mb-6">
+                Over the past few years, I've worked across startups like Playo, Teal India, and Recruit CRM—shipping features fast, 
+                optimizing performance, and leading backend efforts with tools like Node.js, TypeScript, MongoDB, Redis, and AWS.
+              </p>
+              <p className="text-lg">
+                Whether it's architecting microservices, enhancing search with Atlas Search, or building developer-first tools, 
+                I'm always chasing impact, learning fast, and building with care.
+              </p>
+            </div>
+          </div>
+        </section>
         <SkillsSection />
         <ExperienceTimeline />
         <EducationSection />

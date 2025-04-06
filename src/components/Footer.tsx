@@ -12,7 +12,7 @@ const Footer = () => {
             <p>&copy; {currentYear} Aman Tyagi. All Rights Reserved.</p>
           </div>
           <div className="mt-2 md:mt-0">
-            <p>Backend Developer & DevOps Engineer</p>
+            <p>Backend-Focused Software Engineer</p>
           </div>
         </div>
       </div>
