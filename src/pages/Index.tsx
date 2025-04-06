@@ -7,6 +7,7 @@ import EducationSection from '@/components/EducationSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { ArrowDown } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Index = () => {
   return (
@@ -15,19 +16,28 @@ const Index = () => {
       <main className="flex-grow">
         <section className="py-16 bg-gradient-to-b from-primary/5 to-background">
           <div className="container">
-            <div className="max-w-3xl mx-auto relative">
+            <div className="max-w-4xl mx-auto relative">
               <div className="absolute -left-4 -top-4 w-12 h-12 bg-primary/10 rounded-lg blur-lg"></div>
               <div className="absolute -right-8 -bottom-8 w-24 h-24 bg-primary/10 rounded-full blur-xl"></div>
               
               <div className="relative glass-card p-8 rounded-xl border border-muted bg-card shadow-xl">
-                <p className="text-lg md:text-xl mb-6 leading-relaxed">
-                  Over the past few years, I've worked across startups like Playo, Teal India, and Recruit CRM—shipping features fast, 
-                  optimizing performance, and leading backend efforts with tools like Node.js, TypeScript, MongoDB, Redis, and AWS.
-                </p>
-                <p className="text-lg md:text-xl leading-relaxed">
-                  Whether it's architecting microservices, enhancing search with Atlas Search, or building developer-first tools, 
-                  I'm always chasing impact, learning fast, and building with care.
-                </p>
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                  <div className="w-full md:w-1/3 flex justify-center">
+                    <Avatar className="h-56 w-56 shadow-xl border-4 border-white">
+                      <AvatarImage src="/lovable-uploads/189a6c35-3ca7-46e0-9701-090082def1c9.png" alt="Aman Tyagi" className="object-cover" />
+                      <AvatarFallback>AT</AvatarFallback>
+                    </Avatar>
+                  </div>
+                  <div className="w-full md:w-2/3">
+                    <h2 className="text-2xl font-semibold mb-4">About Me</h2>
+                    <p className="text-base md:text-lg mb-4 leading-relaxed">
+                      I'm a passionate software engineer with both frontend and backend expertise. My journey has included working across various startups like Playo, Teal India, and Recruit CRM, where I've had the opportunity to build and optimize features across the full technology stack.
+                    </p>
+                    <p className="text-base md:text-lg leading-relaxed">
+                      Whether it's architecting microservices, enhancing search functionality, or building intuitive user interfaces, I love tackling challenging problems with clean code and thoughtful design. I'm always eager to learn new technologies and expand my skill set.
+                    </p>
+                  </div>
+                </div>
               </div>
               
               <div className="flex justify-center mt-12">

@@ -10,15 +10,15 @@ const Header = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div className="md:col-span-2">
             <span className="inline-block px-3 py-1 bg-white/20 text-sm font-medium rounded-full mb-4 backdrop-blur-sm">
-              Backend Specialist
+              Full-Stack Engineer
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mb-3 tracking-tight">Aman Tyagi</h1>
             <p className="text-xl mb-5 font-medium text-primary-foreground/90">
-              Backend-Focused Software Engineer
+              Software Engineer & Eager Learner
             </p>
             <p className="text-base md:text-lg mb-6 max-w-2xl text-primary-foreground/80 leading-relaxed">
-              I'm a backend-focused Software Engineer with a knack for building real-time, scalable systems that don't just work—they fly. 
-              Specializing in Node.js, TypeScript, MongoDB, and distributed systems.
+              I'm a versatile software engineer who enjoys building full-stack applications with a strong foundation in backend technologies.
+              I'm passionate about learning new technologies and solving complex problems with clean, efficient code.
             </p>
             <div className="flex flex-wrap items-center gap-4 mb-8">
               <div className="flex items-center gap-2 bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
