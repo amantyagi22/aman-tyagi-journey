@@ -15,6 +15,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Link } from "react-router-dom";
 
 const ContactSection = () => {
   return (
@@ -26,18 +27,18 @@ const ContactSection = () => {
       </div>
 
       <div className="container relative z-10">
-        <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full mb-4">
+        {/* <div className="text-center mb-16"> */}
+        {/* <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full mb-4">
             Let's Connect
-          </span>
-          <h2 className="text-4xl font-bold tracking-tight mb-4 text-gradient">
+          </span> */}
+        {/* <h2 className="text-4xl font-bold tracking-tight mb-4 text-gradient">
             Get In Touch
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          </h2> */}
+        {/* <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Have a project in mind or just want to chat? I'd love to hear from
             you!
-          </p>
-        </div>
+          </p> */}
+        {/* </div> */}
 
         <Card className="border-none shadow-xl overflow-hidden max-w-5xl mx-auto">
           <div className="absolute -left-4 -top-4 w-20 h-20 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-full blur-lg"></div>
@@ -121,24 +122,30 @@ const ContactSection = () => {
                 <div className="mt-12 pt-8 border-t border-white/20">
                   <h4 className="font-medium mb-4">Quick Links</h4>
                   <div className="flex flex-wrap gap-3">
-                    <a
-                      href="#experience"
+                    <Link
+                      to="/#experience"
                       className="px-3 py-1 bg-white/10 rounded-full text-sm hover:bg-white/20 transition-colors"
                     >
                       <Briefcase size={12} className="inline mr-1" /> Experience
-                    </a>
-                    <a
-                      href="#skills"
+                    </Link>
+                    <Link
+                      to="/#skills"
                       className="px-3 py-1 bg-white/10 rounded-full text-sm hover:bg-white/20 transition-colors"
                     >
                       <Code size={12} className="inline mr-1" /> Skills
-                    </a>
-                    <a
-                      href="#education"
+                    </Link>
+                    <Link
+                      to="/#education"
                       className="px-3 py-1 bg-white/10 rounded-full text-sm hover:bg-white/20 transition-colors"
                     >
                       <Book size={12} className="inline mr-1" /> Education
-                    </a>
+                    </Link>
+                    <Link
+                      to="/projects"
+                      className="px-3 py-1 bg-white/10 rounded-full text-sm hover:bg-white/20 transition-colors"
+                    >
+                      <Code size={12} className="inline mr-1" /> Projects
+                    </Link>
                   </div>
                 </div>
               </div>

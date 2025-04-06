@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import SkillsSection from "@/components/SkillsSection";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import EducationSection from "@/components/EducationSection";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { ArrowDown, Code, Star, Zap, Users } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -115,7 +114,6 @@ const Index = () => {
         <SkillsSection />
         <ExperienceTimeline />
         <EducationSection />
-        <ContactSection />
       </main>
       <Footer />
     </div>
