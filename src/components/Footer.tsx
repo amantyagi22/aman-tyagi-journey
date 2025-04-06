@@ -1,5 +1,6 @@
 import React from "react";
 import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import Logo from "@/components/ui/logo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,10 +11,8 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center mb-10">
           <div className="mb-6 md:mb-0">
             <div className="flex items-center mb-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center mr-3 shadow-lg">
-                <span className="font-bold text-lg">AT</span>
-              </div>
-              <span className="text-xl font-semibold">Aman Tyagi</span>
+              <Logo size="sm" variant="light" showText={false} />
+              <span className="text-xl font-semibold ml-3">Aman Tyagi</span>
             </div>
             <p className="text-gray-400 max-w-md">
               Software engineer passionate about creating powerful and elegant

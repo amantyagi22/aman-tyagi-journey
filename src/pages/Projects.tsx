@@ -41,6 +41,73 @@ const Projects = () => {
 
   const projects: Project[] = [
     {
+      id: 3,
+      title: "ChatStream AI Interface",
+      description:
+        "A modern chat interface with real-time WebSocket communication, dark mode and syntax highlighting.",
+      longDescription:
+        "A sleek, modern chat interface built with Next.js and React, featuring WebSocket integration for real-time communication. This project provides a clean, responsive user interface for interacting with AI models.",
+      type: "Frontend",
+      techStack: [
+        "Next.js 14",
+        "TypeScript",
+        "Custom CSS",
+        "React Markdown",
+        "Syntax Highlighter",
+        "WebSockets",
+      ],
+      demoUrl: "https://chat-ai-frontend-six.vercel.app/",
+      repoUrl: "https://github.com/amantyagi22/chat-ai-frontend",
+      features: [
+        "Dark/Light mode support",
+        "Real-time chat interface",
+        "Responsive design",
+        "Clean, modern UI",
+        "Custom CSS animations",
+        "Markdown support",
+        "Code syntax highlighting",
+        "TypeScript for type safety",
+        "Next.js App Router",
+        "Modern project structure",
+        "Environment variable configuration",
+        "Vercel deployment ready",
+      ],
+      pairedWith: 4,
+    },
+    {
+      id: 4,
+      title: "ChatStream AI Backend",
+      description:
+        "A high-performance Go backend with WebSockets and Hugging Face AI integration.",
+      longDescription:
+        "A robust Go backend service that powers the ChatStream AI interface. This service handles chat interactions via WebSockets and integrates with Hugging Face's model API to provide real-time AI responses.",
+      type: "Backend",
+      techStack: [
+        "Go 1.21+",
+        "Fiber Framework",
+        "WebSockets",
+        "Hugging Face API",
+        "Docker",
+        "RESTful API",
+      ],
+      repoUrl: "https://github.com/amantyagi22/chat-ai-backend",
+      features: [
+        "High-performance Go backend",
+        "Secure API endpoints",
+        "Hugging Face model integration",
+        "Real-time chat processing",
+        "RESTful API design",
+        "Docker containerization",
+        "CORS support",
+        "Request validation",
+        "Structured logging",
+        "Environmental configuration",
+        "HTTP status code handling",
+        "Modular project structure",
+      ],
+      pairedWith: 3,
+    },
+    {
       id: 1,
       title: "Task Management Application",
       description:
@@ -163,22 +230,23 @@ const Projects = () => {
           </div>
 
           <div className="container relative z-10">
-            <div className="text-center mb-16">
-              <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full mb-4">
-                My Work
-              </span>
-            </div>
-
             <div className="space-y-16">
               {projectPairs.map((pair, pairIndex) => (
-                <div key={`pair-${pairIndex}`} className="mb-12">
+                <div
+                  key={`pair-${pairIndex}`}
+                  className={`mb-12 ${
+                    pair.length > 1
+                      ? "relative p-8 rounded-xl border border-blue-100 bg-gradient-to-r from-blue-50/30 to-indigo-50/30 shadow-sm"
+                      : ""
+                  }`}
+                >
                   {pair.length > 1 && (
                     <div className="flex items-center justify-center mb-6">
-                      <div className="h-px bg-gray-200 flex-1"></div>
-                      <div className="px-4 py-2 bg-blue-50 rounded-full text-blue-700 text-sm font-medium mx-4">
-                        Full Stack Project
+                      <div className="h-px bg-gradient-to-r from-transparent via-blue-100 to-transparent w-full max-w-md"></div>
+                      <div className="px-5 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-sm font-medium mx-4 rounded-lg shadow-sm transform hover:scale-105 transition-transform duration-300">
+                        {pair[0].title.split(" ")[0]} Application
                       </div>
-                      <div className="h-px bg-gray-200 flex-1"></div>
+                      <div className="h-px bg-gradient-to-r from-transparent via-blue-100 to-transparent w-full max-w-md"></div>
                     </div>
                   )}
 
@@ -199,7 +267,13 @@ const Projects = () => {
                                   ? "secondary"
                                   : "outline"
                               }
-                              className="mb-2"
+                              className={`mb-2 ${
+                                project.type === "Backend"
+                                  ? "bg-purple-100 text-purple-700 hover:bg-purple-200"
+                                  : project.type === "Frontend"
+                                  ? "bg-blue-100 text-blue-700 hover:bg-blue-200"
+                                  : ""
+                              }`}
                             >
                               {project.type}
                             </Badge>
@@ -214,22 +288,15 @@ const Projects = () => {
                         </CardHeader>
                         <CardContent className="flex-grow py-2">
                           <div className="flex flex-wrap gap-2">
-                            {project.techStack
-                              .slice(0, 4)
-                              .map((tech, index) => (
-                                <Badge
-                                  key={index}
-                                  variant="outline"
-                                  className="bg-gray-100"
-                                >
-                                  {tech}
-                                </Badge>
-                              ))}
-                            {project.techStack.length > 4 && (
-                              <Badge variant="outline" className="bg-gray-100">
-                                +{project.techStack.length - 4} more
+                            {project.techStack.map((tech, index) => (
+                              <Badge
+                                key={index}
+                                variant="outline"
+                                className="bg-gray-100"
+                              >
+                                {tech}
                               </Badge>
-                            )}
+                            ))}
                           </div>
                         </CardContent>
                         <CardFooter className="flex justify-between border-t pt-3 mt-auto">
@@ -256,18 +323,17 @@ const Projects = () => {
                             )}
                             {project.demoUrl && (
                               <Button
-                                variant="outline"
-                                size="icon"
-                                className="h-8 w-8"
+                                size="sm"
+                                className="bg-gray-900 text-white hover:bg-gray-800 hover:shadow-sm hover:translate-y-[-1px] transition-all font-medium px-3 border border-gray-800/10"
                                 asChild
                               >
                                 <a
                                   href={project.demoUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  onClick={(e) => e.stopPropagation()}
                                 >
-                                  <Globe size={16} />
+                                  <Globe size={16} className="mr-2" /> Live
+                                  Preview
                                 </a>
                               </Button>
                             )}
@@ -279,7 +345,7 @@ const Projects = () => {
 
                   {pair.length > 1 && (
                     <div className="flex justify-center mt-4">
-                      <p className="text-sm text-gray-500 italic">
+                      <p className="text-sm bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent font-medium">
                         Frontend and backend working together as one solution
                       </p>
                     </div>
@@ -361,13 +427,17 @@ const Projects = () => {
                   </Button>
                 )}
                 {selectedProject.demoUrl && (
-                  <Button size="sm" asChild>
+                  <Button
+                    size="sm"
+                    className="bg-gray-900 text-white hover:bg-gray-800 hover:shadow-sm hover:translate-y-[-1px] transition-all font-medium px-3 border border-gray-800/10"
+                    asChild
+                  >
                     <a
                       href={selectedProject.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <ExternalLink size={16} className="mr-2" /> Live Demo
+                      <Globe size={16} className="mr-2" /> Live Preview
                     </a>
                   </Button>
                 )}

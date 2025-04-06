@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
+import Logo from "@/components/ui/logo";
 
 const Header = () => {
   const location = useLocation();
@@ -24,9 +25,7 @@ const Header = () => {
       <div className="absolute top-0 left-0 right-0 z-20">
         <div className="container">
           <div className="flex justify-between items-center py-4">
-            <Link to="/" className="text-2xl font-bold text-white">
-              AT
-            </Link>
+            <Logo size="md" variant="light" showText={false} />
             <nav>
               <ul className="flex space-x-8">
                 <li>

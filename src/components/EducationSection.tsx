@@ -67,13 +67,12 @@ const EducationSection = () => {
                       className="text-xs"
                       asChild
                     >
-                      <a href="#" target="_blank" rel="noopener noreferrer">
-                        <ExternalLink
-                          href="https://aktu.ac.in/"
-                          size={14}
-                          className="mr-1"
-                        />{" "}
-                        Visit
+                      <a
+                        href="https://aktu.ac.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink size={14} className="mr-1" /> Visit
                       </a>
                     </Button>
                   </div>
