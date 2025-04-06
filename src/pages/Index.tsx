@@ -28,7 +28,7 @@ const Index = () => {
                     <div className="relative z-10">
                       <Avatar className="w-64 h-64 shadow-2xl border-4 border-white relative z-10">
                         <AvatarImage
-                          src="/lovable-uploads/189a6c35-3ca7-46e0-9701-090082def1c9.png"
+                          src="/assets/images/avatar.png"
                           alt="Aman Tyagi"
                           className="object-cover"
                         />
