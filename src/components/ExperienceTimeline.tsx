@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Briefcase } from 'lucide-react';
+import { Briefcase, Calendar, MapPin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 interface Experience {
@@ -74,40 +74,50 @@ const ExperienceTimeline = () => {
   ];
 
   return (
-    <section id="experience" className="py-12">
+    <section id="experience" className="py-20">
       <div className="container">
-        <h2 className="text-2xl font-bold mb-6 flex items-center">
-          <Briefcase className="mr-2" size={24} />
-          Professional Experience
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight mb-3">Professional Experience</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            My career journey building scalable backends and real-time systems
+          </p>
+        </div>
         
-        <div className="timeline-container">
+        <div className="relative timeline-container">
+          <div className="absolute left-[15px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/80 via-primary/40 to-primary/10"></div>
+          
           {experiences.map((exp, index) => (
-            <div key={index} className="timeline-item mb-8">
-              <Card>
+            <div key={index} className="timeline-item mb-10">
+              <Card className="border-none shadow-lg overflow-hidden transition-all hover:shadow-xl">
                 <CardContent className="pt-6">
-                  <div className="flex flex-col md:flex-row md:justify-between mb-2">
+                  <div className="flex flex-col md:flex-row md:justify-between mb-4">
                     <div>
-                      <h3 className="font-semibold text-lg">{exp.position}</h3>
-                      <h4 className="font-medium text-primary">{exp.company}</h4>
+                      <h3 className="font-semibold text-lg text-primary">{exp.position}</h3>
+                      <h4 className="font-medium text-foreground">{exp.company}</h4>
                     </div>
-                    <div className="mt-1 md:mt-0 text-sm text-muted-foreground">
-                      <div>{exp.location}</div>
-                      <div>{exp.period}</div>
+                    <div className="mt-2 md:mt-0 text-sm text-muted-foreground flex flex-col md:items-end">
+                      <div className="flex items-center gap-1 mb-1">
+                        <MapPin size={14} className="text-muted-foreground/70" />
+                        <span>{exp.location}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Calendar size={14} className="text-muted-foreground/70" />
+                        <span>{exp.period}</span>
+                      </div>
                     </div>
                   </div>
                   
-                  <ul className="list-disc pl-5 mt-3 space-y-2">
+                  <ul className="list-disc pl-5 mt-4 space-y-3">
                     {exp.description.map((item, i) => (
-                      <li key={i} className="text-sm">{item}</li>
+                      <li key={i} className="text-sm leading-relaxed">{item}</li>
                     ))}
                   </ul>
                   
-                  <div className="mt-3">
-                    <p className="text-xs text-muted-foreground mb-1">Skills:</p>
+                  <div className="mt-5 pt-4 border-t border-border/40">
+                    <p className="text-xs text-muted-foreground mb-2">Technologies Used:</p>
                     <div className="flex flex-wrap">
                       {exp.skills.map((skill, i) => (
-                        <span key={i} className="skill-tag">{skill}</span>
+                        <span key={i} className="skill-tag bg-primary/10 text-primary hover:bg-primary/20 transition-colors">{skill}</span>
                       ))}
                     </div>
                   </div>
