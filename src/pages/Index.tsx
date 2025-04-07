@@ -1,20 +1,121 @@
-import React from "react";
+
+import React, { useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import SkillsSection from "@/components/SkillsSection";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import EducationSection from "@/components/EducationSection";
 import Footer from "@/components/Footer";
-import { ArrowDown, Code, Star, Zap, Users } from "lucide-react";
+import { ArrowDown, Code, Star, Zap, Users, Terminal, Database } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import AnimatedIllustration from "@/components/AnimatedIllustration";
 
 const Index = () => {
+  // Ref for the floating animation elements
+  const floatingRef = useRef<HTMLDivElement>(null);
+
+  // Animation effect for floating elements
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!floatingRef.current) return;
+      
+      const elements = floatingRef.current.querySelectorAll('.floating-element');
+      
+      elements.forEach((el) => {
+        const speed = parseFloat((el as HTMLElement).dataset.speed || "0.05");
+        const x = (window.innerWidth / 2 - e.clientX) * speed;
+        const y = (window.innerHeight / 2 - e.clientY) * speed;
+        
+        (el as HTMLElement).style.transform = `translateX(${x}px) translateY(${y}px)`;
+      });
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background overflow-hidden">
       <Header />
       <main className="flex-grow">
+        {/* Hero Section with AI-generated illustration */}
+        <section className="py-12 md:py-20 relative bg-gradient-to-b from-blue-50 to-white">
+          <div className="container">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6 animate-fade-in">
+                  <span className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 text-sm font-medium rounded-full backdrop-blur-sm border border-blue-100">
+                    <span className="inline-block w-2 h-2 rounded-full bg-blue-600 mr-2 animate-pulse"></span>
+                    Full-Stack Engineer
+                  </span>
+                  <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-gradient">
+                    <span className="block">Hello, I'm</span>
+                    <span className="block">Aman Tyagi</span>
+                  </h1>
+                  <p className="text-xl md:text-2xl text-gray-600">
+                    Software Engineer & Eager Learner
+                  </p>
+                  <p className="text-gray-600 max-w-lg">
+                    I'm a versatile software engineer who enjoys building full-stack
+                    applications with experience in both frontend and backend technologies.
+                  </p>
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    <Button 
+                      className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 animate-bounce-subtle"
+                      size="lg">
+                      View My Work
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="lg"
+                      className="border-blue-200 hover:bg-blue-50 transition-all duration-300">
+                      Download Resume
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="relative">
+                  <AnimatedIllustration />
+                  
+                  {/* Floating tech elements */}
+                  <div ref={floatingRef} className="absolute inset-0 pointer-events-none">
+                    <div className="floating-element absolute top-10 right-10" data-speed="0.03">
+                      <div className="bg-white p-3 rounded-xl shadow-lg">
+                        <Terminal size={24} className="text-blue-500" />
+                      </div>
+                    </div>
+                    <div className="floating-element absolute bottom-20 left-10" data-speed="0.04">
+                      <div className="bg-white p-3 rounded-xl shadow-lg">
+                        <Database size={24} className="text-indigo-500" />
+                      </div>
+                    </div>
+                    <div className="floating-element absolute top-40 left-20" data-speed="0.02">
+                      <div className="bg-white p-3 rounded-xl shadow-lg">
+                        <Code size={24} className="text-purple-500" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
+            <a
+              href="#about"
+              className="flex flex-col items-center text-sm text-gray-500 hover:text-primary transition-colors"
+            >
+              <span className="mb-2">Scroll down</span>
+              <ArrowDown className="animate-bounce" size={20} />
+            </a>
+          </div>
+        </section>
+
         {/* About Section with Stats */}
-        <section className="py-20 relative">
+        <section id="about" className="py-20 relative">
           <div className="container">
             <div className="max-w-6xl mx-auto relative">
               {/* Decorative elements */}
@@ -26,9 +127,9 @@ const Index = () => {
                   <div className="w-full md:w-2/5 flex justify-center relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-2xl transform -translate-y-1/4"></div>
                     <div className="relative z-10">
-                      <Avatar className="w-64 h-64 shadow-2xl border-4 border-white relative z-10">
+                      <Avatar className="w-64 h-64 shadow-2xl border-4 border-white relative z-10 animate-float">
                         <AvatarImage
-                          src="/assets/images/avatar.png"
+                          src="/lovable-uploads/189a6c35-3ca7-46e0-9701-090082def1c9.png"
                           alt="Aman Tyagi"
                           className="object-cover"
                         />
@@ -60,8 +161,8 @@ const Index = () => {
                     </p>
 
                     {/* Stats */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-                      <div className="flex flex-col items-center p-4 bg-blue-50 rounded-lg">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 staggered-fade-in">
+                      <div className="flex flex-col items-center p-4 bg-blue-50 rounded-lg transform transition-all hover:scale-105 hover:shadow-md">
                         <Code className="text-blue-500 mb-2" size={28} />
                         <span className="text-2xl font-bold text-gray-800">
                           2+
@@ -70,14 +171,14 @@ const Index = () => {
                           Years Coding
                         </span>
                       </div>
-                      <div className="flex flex-col items-center p-4 bg-purple-50 rounded-lg">
+                      <div className="flex flex-col items-center p-4 bg-purple-50 rounded-lg transform transition-all hover:scale-105 hover:shadow-md">
                         <Star className="text-purple-500 mb-2" size={28} />
                         <span className="text-2xl font-bold text-gray-800">
                           20+
                         </span>
                         <span className="text-sm text-gray-600">Projects</span>
                       </div>
-                      <div className="flex flex-col items-center p-4 bg-indigo-50 rounded-lg">
+                      <div className="flex flex-col items-center p-4 bg-indigo-50 rounded-lg transform transition-all hover:scale-105 hover:shadow-md">
                         <Zap className="text-indigo-500 mb-2" size={28} />
                         <span className="text-2xl font-bold text-gray-800">
                           5+
@@ -86,7 +187,7 @@ const Index = () => {
                           Technologies
                         </span>
                       </div>
-                      <div className="flex flex-col items-center p-4 bg-pink-50 rounded-lg">
+                      <div className="flex flex-col items-center p-4 bg-pink-50 rounded-lg transform transition-all hover:scale-105 hover:shadow-md">
                         <Users className="text-pink-500 mb-2" size={28} />
                         <span className="text-2xl font-bold text-gray-800">
                           3+
