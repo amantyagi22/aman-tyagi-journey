@@ -164,7 +164,7 @@ const ContactSection = () => {
                       <Label htmlFor="name">Your Name</Label>
                       <Input
                         id="name"
-                        placeholder="John Doe"
+                        placeholder="Full Name"
                         className="border-gray-200 focus:border-blue-500"
                       />
                     </div>
@@ -173,7 +173,7 @@ const ContactSection = () => {
                       <Input
                         id="email"
                         type="email"
-                        placeholder="john@example.com"
+                        placeholder="email@example.com"
                         className="border-gray-200 focus:border-blue-500"
                       />
                     </div>
@@ -183,7 +183,7 @@ const ContactSection = () => {
                     <Label htmlFor="subject">Subject</Label>
                     <Input
                       id="subject"
-                      placeholder="How can I help you?"
+                      placeholder="Project Collaboration / Job Opportunity"
                       className="border-gray-200 focus:border-blue-500"
                     />
                   </div>
@@ -192,7 +192,7 @@ const ContactSection = () => {
                     <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
-                      placeholder="Write your message here..."
+                      placeholder="I'd like to discuss a potential project that involves..."
                       className="min-h-32 border-gray-200 focus:border-blue-500"
                     />
                   </div>
