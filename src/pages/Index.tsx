@@ -8,7 +8,6 @@ import Footer from "@/components/Footer";
 import { ArrowDown, Code, Star, Zap, Users, Terminal, Database } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import AnimatedIllustration from "@/components/AnimatedIllustration";
 
 const Index = () => {
   // Ref for the floating animation elements
@@ -41,79 +40,6 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-background overflow-hidden">
       <Header />
       <main className="flex-grow">
-        {/* Hero Section with AI-generated illustration */}
-        <section className="py-12 md:py-20 relative bg-gradient-to-b from-blue-50 to-white">
-          <div className="container">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6 animate-fade-in">
-                  <span className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 text-sm font-medium rounded-full backdrop-blur-sm border border-blue-100">
-                    <span className="inline-block w-2 h-2 rounded-full bg-blue-600 mr-2 animate-pulse"></span>
-                    Full-Stack Engineer
-                  </span>
-                  <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-gradient">
-                    <span className="block">Hello, I'm</span>
-                    <span className="block">Aman Tyagi</span>
-                  </h1>
-                  <p className="text-xl md:text-2xl text-gray-600">
-                    Software Engineer & Eager Learner
-                  </p>
-                  <p className="text-gray-600 max-w-lg">
-                    I'm a versatile software engineer who enjoys building full-stack
-                    applications with experience in both frontend and backend technologies.
-                  </p>
-                  <div className="flex flex-wrap gap-4 pt-4">
-                    <Button 
-                      className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 animate-bounce-subtle"
-                      size="lg">
-                      View My Work
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="lg"
-                      className="border-blue-200 hover:bg-blue-50 transition-all duration-300">
-                      Download Resume
-                    </Button>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <AnimatedIllustration />
-                  
-                  {/* Floating tech elements */}
-                  <div ref={floatingRef} className="absolute inset-0 pointer-events-none">
-                    <div className="floating-element absolute top-10 right-10" data-speed="0.03">
-                      <div className="bg-white p-3 rounded-xl shadow-lg">
-                        <Terminal size={24} className="text-blue-500" />
-                      </div>
-                    </div>
-                    <div className="floating-element absolute bottom-20 left-10" data-speed="0.04">
-                      <div className="bg-white p-3 rounded-xl shadow-lg">
-                        <Database size={24} className="text-indigo-500" />
-                      </div>
-                    </div>
-                    <div className="floating-element absolute top-40 left-20" data-speed="0.02">
-                      <div className="bg-white p-3 rounded-xl shadow-lg">
-                        <Code size={24} className="text-purple-500" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
-            <a
-              href="#about"
-              className="flex flex-col items-center text-sm text-gray-500 hover:text-primary transition-colors"
-            >
-              <span className="mb-2">Scroll down</span>
-              <ArrowDown className="animate-bounce" size={20} />
-            </a>
-          </div>
-        </section>
-
         {/* About Section with Stats */}
         <section id="about" className="py-20 relative">
           <div className="container">
