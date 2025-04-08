@@ -1,11 +1,18 @@
-
 import React, { useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import SkillsSection from "@/components/SkillsSection";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import EducationSection from "@/components/EducationSection";
 import Footer from "@/components/Footer";
-import { ArrowDown, Code, Star, Zap, Users, Terminal, Database } from "lucide-react";
+import {
+  ArrowDown,
+  Code,
+  Star,
+  Zap,
+  Users,
+  Terminal,
+  Database,
+} from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 
@@ -17,22 +24,25 @@ const Index = () => {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!floatingRef.current) return;
-      
-      const elements = floatingRef.current.querySelectorAll('.floating-element');
-      
+
+      const elements =
+        floatingRef.current.querySelectorAll(".floating-element");
+
       elements.forEach((el) => {
         const speed = parseFloat((el as HTMLElement).dataset.speed || "0.05");
         const x = (window.innerWidth / 2 - e.clientX) * speed;
         const y = (window.innerHeight / 2 - e.clientY) * speed;
-        
-        (el as HTMLElement).style.transform = `translateX(${x}px) translateY(${y}px)`;
+
+        (
+          el as HTMLElement
+        ).style.transform = `translateX(${x}px) translateY(${y}px)`;
       });
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
-    
+    document.addEventListener("mousemove", handleMouseMove);
+
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
@@ -55,7 +65,7 @@ const Index = () => {
                     <div className="relative z-10">
                       <Avatar className="w-64 h-64 shadow-2xl border-4 border-white relative z-10 animate-float">
                         <AvatarImage
-                          src="/lovable-uploads/189a6c35-3ca7-46e0-9701-090082def1c9.png"
+                          src="/assets/images/avatar.png"
                           alt="Aman Tyagi"
                           className="object-cover"
                         />
